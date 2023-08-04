@@ -61,3 +61,94 @@ const emailReplace = emailAnime.replace('naruto', 'boruto');
 console.log(emailReplace, emailAnime);
 
 // Todos os metodos não substituem o metodo principal.
+
+// Variaveis contendo numeros inteiros e decimais
+const radius = 10;
+const pi = 3.14;
+
+// Nos metodos aritmeticos, o que vai prevalecer na ordem em que a operacao vai ocorrer
+// é parenteses
+// expoentes ou raizes
+// multiplicacao e divisao
+// adicao e subtracao
+
+const area = pi * radius ** 2;
+
+/* quando der o log de area
+   a ordem em que sera executado, vai ser primeiro
+   radius e expoentes, e logo apos
+   o resultado * pi
+*/
+console.log(area);
+
+/* 
+  Outro exemplo de uma operacao artimetica, seguindo a ordem
+*/
+
+const crazyOperation = 2 * (10 - 2) ** 2;
+console.log(crazyOperation);
+
+// Operadores de incremento e decremento
+// Você quer fazer o incremento em um numero
+// usamos o ++;
+let postLikes = 10;
+
+postLikes++;
+console.log(postLikes);
+// Para decrementar usamos o --;
+
+// Podemos tambem usar para outros operadores e incrementar um valor maior
+// usando *= | /= | += | -= | %=
+postLikes += 10;
+console.log(postLikes);
+
+// O atributo % na programação é conhecido como RESTO
+// Resto da divisão
+let total = 10 % 3;
+console.log(total);
+// O resto da divisao de 10 por 3 é 1
+
+// NaN = not a number
+// Quanto tentamos fazer uma operacao usando / ou * ou - com
+// strings e numero
+// o resultado sera NaN
+
+let quantidadeMouse = 10;
+console.log(quantidadeMouse - 'mouse');
+
+// concatenacao de string com numero
+console.log('meu post tem no total ' + postLikes + ' de likes');
+// O javascript por baixo dos panos, transformou postLikes em string
+
+// Template Strings
+const postTitle = 'É bolacha ou biscoito?';
+const postAuthor = 'Matheus Saad';
+const postComments = 15;
+
+// usando concatenacao
+// const postMessage =
+//   'O post "' +
+//   postTitle +
+//   '", do ' +
+//   postAuthor +
+//   ', tem ' +
+//   postComments +
+//   ' comentarios';
+
+// A concatenacao deixa ilegivel o codigo dependendo do tamanho da string
+// Por isso que é melhor usar o template string
+// como no exemplo abaixo
+
+// template string
+const postMessage = `O post ${postTitle}, do ${postAuthor}, tem ${postComments} comentarios`;
+console.log(postMessage);
+
+// Com JS é possível adicionar codigo HTML pelo JS
+// utilizando o template HTML
+const html = `
+  <h2>${postTitle}</h2>
+  <p>Author: ${postAuthor}</p>
+  <span>Este post tem ${postComments} comentários</span>
+`;
+
+console.log(html);
