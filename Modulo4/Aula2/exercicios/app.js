@@ -98,4 +98,4 @@ car.getColorsMessage();
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
 
-console.log(`O carro é um ${car.brand} ${car.name}`);
+console.log(`O carro é um ${car['brand']} ${car['name']}`);
