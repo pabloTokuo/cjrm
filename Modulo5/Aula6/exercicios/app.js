@@ -7,14 +7,15 @@
 */
 
 const ul = document.querySelector(".videos");
-
 const list = Array.from(ul.children);
 
-list.forEach(li => {
+const insertVideoClass = li => {
   li.classList.add("video");
-})
+};
 
-console.log(ul);
+list.forEach(insertVideoClass);
+
+console.log(list);
 
 /*
   02
@@ -43,7 +44,7 @@ console.log(h1.nextElementSibling);
   - Descubra quem é o irmão anterior da ul e exiba-o no console;
 */
 
-// console.log(ul.nextSibling);
+console.log(ul.previousElementSibling);
 
 /*
   05
