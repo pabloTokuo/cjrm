@@ -22,7 +22,7 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691];
 
 const numbersBelow501 = crazyNumbers.reduce((acc, numberBelow) => {
   return numberBelow < 501 ? ++acc : acc;
-}, 0)
+}, 0);
 
 console.log(numbersBelow501);
 
