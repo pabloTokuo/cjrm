@@ -1,4 +1,4 @@
-const getTodos = (url, callback) => {
+const getPokemon = url => new Promise((resolve, reject) => {
   const request = new XMLHttpRequest();
 
   request.addEventListener("readystatechange", () => {
@@ -7,26 +7,28 @@ const getTodos = (url, callback) => {
 
     if(isRequestOk) {
       const data = JSON.parse(request.responseText);
-      callback(null, data);
+      resolve(data);
       return;
     };
 
     if(isRequestNotOk) {
-      callback("Não foi possível obter os dados", null);
+      reject("Não foi possível obter os dados");
     };
   });
 
   request.open("GET", url);
   request.send();
-};
-
-getTodos("../json/todos.json", (error, data) => {
-  console.log(data);
-  getTodos("../json/todos02.json", (error, data) => {
-    console.log(data);
-    getTodos("../json/todos03.json", (error, data) => {
-      console.log(data);
-    })
-  })
 });
+
+getPokemon("https://pokeapi.co/api/v2/pokemon/1")
+.then(bulbasaur => {
+  console.log(bulbasaur);
+  return getPokemon("https://pokeapi.co/api/v2/pokemon/4");
+})
+.then(charmander => {
+  console.log(charmander);
+  return getPokemon("https://pokeapi.co/api/v2/pokemon/7");
+})
+.then(console.log)
+.catch(error => console.log(error));
 
